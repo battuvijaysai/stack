@@ -1,0 +1,169 @@
+#include<stdio.h>
+
+#include<stdlib.h>
+
+{
+    
+struct stack
+     
+{
+    
+char a[20];
+    
+int top;
+    
+int size;
+    
+};
+    
+struct stackpush(struct stack S,char C)
+       
+{
+        
+if(S.top==S.max-1)
+        
+{
+            
+printf(("over flow occurs");
+        
+}
+            
+else
+            
+{
+                
+S.top++;
+                
+S.a[S.top]=C;
+            
+}
+        
+}
+        
+char pop(struct stack *S)
+        
+{
+            
+char el;
+            
+if(S*top==-1)
+            
+{
+                
+printf("stack is empty");
+            
+}
+        
+}
+            
+void main()
+            
+{
+                
+struct stack S;
+                
+S.top=0;
+                
+S.a[S.top]='#';
+                
+char infix[20],symbol,post[20],el;
+                
+int i=0;
+                
+int j=0;
+                
+printf("enter infix expression");
+                
+scanf("%s",infix);
+                
+while(infix[i]!='\0')
+                
+{
+symb=infix[i];
+                    
+if (isdigit(symb)||is alpha(symb))
+                    
+{
+                    
+post[j+1]=symb;
+                    
+}
+                    
+else
+                    
+{
+                        
+if(symb==')')
+                        
+{
+                            
+el=s.pop();
+                            
+while(el!='(')
+                            
+post[j+1]=ele;
+                            
+el=s.pop();
+                        
+}
+                    
+}
+                
+}
+                        
+while(prece(symbol)<=prece(S.a[S.top]&&(    S.a[S.top]!='('))
+                        
+{
+                            
+el=s.pop();
+                            
+popst[j++]=el;
+                        
+}
+                        
+                        
+S=S.push(S,symbol);
+                        
+i++;
+                    
+}
+                    
+while(S.top!=0)
+                    
+el=S.pop();
+                    
+post[j++]=el;
+                
+}
+                
+post[j]='\0';
+                
+printf("%S",post);
+            
+}
+            
+int prece(char C)
+            
+{
+                
+switch(C)
+                
+{
+                    
+case'#':return 0;
+                    
+case'+':return 1;
+                    
+case'-':return 1;
+                    
+case'*':return 2;
+                    
+case'/':return 2;
+                    
+case'^':return 3;
+                    
+case'(':return 4;
+                
+}
+    
+}
